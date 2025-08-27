@@ -2,9 +2,12 @@ import array;
 import sys;
 
 fullname = input("Masukkan Nama kamu :")
+<<<<<<< HEAD
 username = input("Masukkan Username kamu :")
 password = input("Masukkan Password kamu :")
 tanggal = "01-11-1987"
+=======
+>>>>>>> 6dcfc8e (update terbaru register_user.py)
 
 arr_panjang_password = array.array('i',[1,2,3,4,5]);
 
