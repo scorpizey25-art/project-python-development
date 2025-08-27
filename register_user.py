@@ -1,6 +1,6 @@
-fullname = "Novan Surya Ardani"
-username = "scorpizey"
-password = "pwd_scorpizey"
+fullname = input("Masukkan Nama kamu :")
+username = input("Masukkan Username kamu :")
+password = input("Masukkan Password kamu :")
 tanggal  = "01-11-1987"
 
 print(fullname)
