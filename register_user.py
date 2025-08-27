@@ -1,7 +1,7 @@
 fullname = input("Masukkan Nama kamu :")
 username = input("Masukkan Username kamu :")
 password = input("Masukkan Password kamu :")
-tanggal  = "01-11-1987"
+tanggal = "01-11-1987"
 
 print(fullname)
 print(username)
