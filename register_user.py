@@ -3,9 +3,9 @@ import sys
 
 fullname = input("Masukkan Nama kamu :")
 
-arr_panjang_password = array.array('i', [1, 2, 3, 4, 5]);
+arr_panjang_password = array.array('i', [1, 2, 3, 4, 5])
 
-#perubahan source dari pc kantor
+# perubahan source dari pc kantor
 if fullname is None or fullname == '':
     print("fullname tidak boleh kosong !!!")
     sys.exit()
@@ -19,8 +19,8 @@ if password == "12":
         print("password match")
     else:
         # jika numeric dialam {} pakai =>
-        # simbol f"isi string {}", atau 
-        # gunakan format({}), atau 
+        # simbol f"isi string {}", atau
+        # gunakan format({}), atau
         # gunakan % {}
         print(f"password must containt more {arr_panjang_password[4]} length")
 else:

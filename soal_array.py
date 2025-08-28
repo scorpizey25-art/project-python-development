@@ -1,8 +1,10 @@
 print(" ================= soal 1 ================= ")
 """
 Tugas:
-1. Gabungkan kedua list buah di bawah menjadi satu list baru yang bernama `buah_gabungan`.
-2. Hapus semua duplikat (nama buah yang muncul lebih dari satu kali) dari `buah_gabungan`.
+1. Gabungkan kedua list buah di bawah menjadi satu list baru yang bernama
+    `buah_gabungan`.
+2. Hapus semua duplikat (nama buah yang muncul lebih dari satu kali) dari
+    `buah_gabungan`.
 3. Urutkan list yang sudah bersih dari duplikat tersebut secara alfabetis.
 4. Cetak list yang sudah rapi itu.
 """
@@ -73,5 +75,4 @@ for i in range(len(mobil)):
         mobil[i] = 'Wuling'
     elif mobil[i] == 'Nissan':
         mobil[i] = 'Mercedes'
-               
 print(f"{mobil}")
