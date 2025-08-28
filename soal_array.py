@@ -1,4 +1,4 @@
-print(" ================================= soal 1 =================================")
+print(" ================= soal 1 ================= ")
 """
 Tugas:
 1. Gabungkan kedua list buah di bawah menjadi satu list baru yang bernama `buah_gabungan`.
@@ -26,7 +26,7 @@ print(f"remove duplicate array {buah_unik_list}")
 sort_buah = sorted(buah_unik_list)
 print(f"urutkan {sort_buah}")
 
-print(" ================================= soal 2 =================================")
+print(" ================= soal 2 ================= ")
 
 """
 Tugas:
@@ -55,33 +55,23 @@ for i in range(len(angka)-1):
 angka_urut = angka
 print(f"Hasil Pengurutan Angka {angka_urut}")
 
-print(" ================================= soal 3 =================================")
+print(" ================= soal 3 ================= ")
 """
 Tugas:
 1. Ganti merek 'Suzuki' dengan 'Wuling'.
 2. Ganti merek 'Nissan' dengan 'Mercedes'.
 3. Cetak list `mobil` setelah semua perubahan.
 """
+# --- RUANG KOSONG UNTUK JAWABAN ANDA ---
 
 mobil = ['Honda', 'Toyota', 'Suzuki', 'Mitsubishi', 'Nissan']
 
-# --- RUANG KOSONG UNTUK JAWABAN ANDA ---
 print(f"Isi Array Asli {mobil}")
 
-isLow = 0
-isHigh = len(mobil)-1
-isTarget = "Nissan"
-
-while (isLow <= isHigh):  # selama page nilai low lebih kecil/sama
-    isMid = (isLow + isHigh) // 2    # tentukan nilai tengah
-
-    if mobil[isMid] == isTarget:   # apakah nilai ditengah sesuai yang dicari ?
-        print("ditemukan nilai pada posisi mid")
-        break
-    elif mobil[isMid] < isTarget:   # cari nilai di posisi kanan
-        isLow = isMid + 1
-    else:
-        isHigh = isMid - 1
-
-for i in range(isHigh):
-    print(mobil[i])
+for i in range(len(mobil)):
+    if mobil[i] == 'Suzuki':
+        mobil[i] = 'Wuling'
+    elif mobil[i] == 'Nissan':
+        mobil[i] = 'Mercedes'
+               
+print(f"{mobil}")
