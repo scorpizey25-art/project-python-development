@@ -1,8 +1,15 @@
 # Import modul os untuk membuat direktori jika belum ada
 import os
+from datetime import datetime
+
+# Buat record datetime current
+# Menggunakan f-string dan strftime untuk format yang lebih baik dan konsisten
+waktu_registrasi = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 # Menentukan jalur file untuk portabilitas yang lebih baik
 file_path = os.path.join('examp', 'data_user.txt')
+
+# Periksa dan buat direktori jika belum ada
 if not os.path.exists('examp'):
     os.makedirs('examp')
 
@@ -13,7 +20,7 @@ while pilihan != '3':
     print("2. Tampilkan Data Pengguna")
     print("3. Keluar Aplikasi")
 
-    pilihan = input("Masukkan Pilihan Anda : ")
+    pilihan = input("Masukkan Pilihan Anda: ")
 
     # --- Bagian Daftar Pengguna ---
     if pilihan == '1':
@@ -30,8 +37,8 @@ while pilihan != '3':
                                      "tidak boleh kosong.")
 
                 # Menulis data ke file dengan format yang benar
+                file.write(f"Registrasi: {waktu_registrasi}\n")
                 file.write(f"Username: {username}\n")
-                # Tambahkan baris kosong untuk pemisah
                 file.write(f"Password: {password}\n\n")
                 print("Data Berhasil Disimpan")
 
