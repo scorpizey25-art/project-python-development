@@ -1,15 +1,12 @@
-Username: Ratih
+Registrasi: 28-08-2025 04:26:39
 Username: Novan Surya Ardani
-Username: Ratih Dwingsih
-Username: Nobita
-Password: 123456
+Password: 1234567890
 
-Username: Surya
-Password: 123456
+Registrasi: 28-08-2025 04:26:39
+Username: Akhsani Amien Inayati
+Password: 8888888888
 
-Username: Beckam
-Password: 999101
-
-Registrasi: 28-08-2025 04:20:23 +  + {username}
-Password: 123456
+Registrasi: 28-08-2025 04:26:39
+Username: Arvino Nazriel Rasyad
+Password: 7777777777
 
