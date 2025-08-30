@@ -1,0 +1,90 @@
+Langkah konfigurasi awal GIT
+1. Buat direktori lokal 
+	terminal : mkdir git-project
+2. Masuk direktori baru anda 
+	terminal : cd git-project 
+3. Lakukan konnfigurasi name & email anda di terminal
+	terminal : 
+		git config --global user.name "nama anda"
+		git config --global user.email "emailanda@contoh.com"
+
+Langkah dasar GIT
+A. Jika baru membuat repository di GITHUB :
+	- baru memulai project dari 0, gunakan 
+		terminal : "git init"
+	- buat file baru, misalkan main.py
+    - tambahkan ke repository lokal, 
+		* gunakan .(menambahkan all file)
+			terminal : git add .		
+		* mendefinisikan nama file		
+			terminal : git add main.py		
+	- commit perubahan ke repository lokal
+		* terminal : git commit -m "tulis pesan anda"
+	- Hubungkan repositori lokal Anda ke remote (GitHub)
+		* terminal : git remote add origin https://github.com/scorpizey25-art/project-python-development
+	- Jika pertama kali push gunakan ini	
+		* terminal : git push -u origin master	
+
+B. Jika repository di GITHUB sudah ada dan project sudah ada :
+    - Hubungkan repositori lokal Anda ke remote (GitHub)
+		* terminal : git clone https://github.com/scorpizey25-art/project-python-development
+	- Git add
+	- Git commit -M "pesan"
+	- Git push   
+   
+C. Konfigurasi
+	- cek status branch (default master, maka ganti ke main)
+		terminal : git status / git branch (lokal) / git branch -a (lokal+github)
+	- ubah pada repo lokal menjadi main 
+		terminal : git branch -m main
+	- jangan lupa push perubahannya ke github
+		terminal : git push -u origin main
+
+D. Proses Pull
+	terminal : git pull 
+	- Proses pull adalah proses yang digunakan menarik source dari repo github ke repo lokal
+	- Memastikan semua rekan tim bekerja dari versi kode yang sama dan terbaru (uptodate)
+	- Memaksa Anda untuk menyelesaikan konflik source yang sama secara manual di komputer lokal Anda,
+	  sebelum dilakukan push
+	- Proses Pull harus dilakukan pertama kali, sebelum melakukan push perubahan ke repo github
+   
+
+Troubleshoot :
+1. melakukan switch branch lain, padahal branch saat ini masih ada task yg belum selesai ( commit )
+   solusi langkah opsional yang bisa diambil : 
+    a. Jika task tersebut memang lupa dicommit dan tidak ada perubahan apapun, maka bisa lakukan 
+		terminal : git commit -m "xxx"
+	b. Jika task tersebut memang belum selesai, dan kita ada kepentingan mengedit di branch lain
+		maka gunakan stash. Jadi stash ini mekanisme untuk :
+			1. mencover / mencadangkan task yang belum selesai ( contoh branch fitur-login )
+				terminal : git stash
+			2. beralih ke branch lain dan melakukan task di branch lain
+				terminal : git switch main
+			3. kembali ke branch fitur-login, dan lakukan stash pop jika task sudah selesai ( commit )
+				terminal : git stash pop
+	c. Jika task tersebut ingin di rollback ( dikembalikan ke kondisi terakhir )
+		terminal : git restore
+	d. Jika task tersebut dibatalkan, namun ingin masih meninggalkan jejak histori
+		terminal : git revert
+	e. Jika task tersebut dihapus, menghapus histori
+		terminal : git reset		
+
+Proses Flow git Revert :
+	1. user A commit perubahan login.py
+		engine git	: membuat id hash A1 di repo lokal
+		terminal 	: git commit -m "push login"	
+	2. user A push ke repo remote
+		engine git	: mengirim id hash A1 di repo remote
+		terminal 	: git push	
+	3. masalah : user A ingin menghapus tombol reset login
+	4. user A melakukan cek log	
+		engine git	: menampilkan id hash & message commit
+		terminal	: git log --online 
+	5. user A mencatat id hash bermasalah yang ingin dikembalikan, yaitu A1
+		engine git	: membuat commit dengan id hash baru A2
+		terminal	: revert A1
+	6. user melakukan push ke repo remote
+		engine git	: mengirim id hash A2 di repo remote
+		terminal 	: git push	
+	7. repo lokal berisi ..., A0, A1, A2
+	   repo remote berisi ..., A0, A1, A2
