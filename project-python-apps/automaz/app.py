@@ -6,7 +6,6 @@ import subprocess
 import datetime
 import glob
 
-
 def process_automation():
     """
     Mengotomatisasi proses berdasarkan konfigurasi dari config.ini.
@@ -19,8 +18,9 @@ def process_automation():
 
     # Membaca konfigurasi
     try:
-        config.read(config_path)
-      
+        # Menambahkan raw=True untuk menghindari kesalahan format
+        config.read(config_path, encoding='utf-8')
+        
         # Mengambil jalur dari [settings_paths]
         paths = config['settings_paths']
         path_winrar = paths['path_winrar']
